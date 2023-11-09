@@ -8,6 +8,10 @@ public class ListTester {
 
     private List<Integer> list;
 
+    /**
+     * initializes the list field in the specified way
+     * @param c class extending List
+     */
     public ListTester(Class<? extends List> c) {
         if (c.equals(ArrayList.class)) {
             list = new ArrayList<>();
@@ -16,6 +20,11 @@ public class ListTester {
         }
     }
 
+    /**
+     * time to execute get() a given number of times
+     * @param num number of executions
+     * @return execution time
+     */
     public long execTimeOfGet(int num) {
         fill(num);
         long time = System.currentTimeMillis();
@@ -29,6 +38,11 @@ public class ListTester {
         return result;
     }
 
+    /**
+     * time to execute add() a given number of times
+     * @param num number of executions
+     * @return execution time
+     */
     public long execTimeOfAdd(int num) {
         long time = System.currentTimeMillis();
 
@@ -41,6 +55,11 @@ public class ListTester {
         return result;
     }
 
+    /**
+     * time to execute remove() a given number of times
+     * @param num number of executions
+     * @return execution time
+     */
     public long execTimeOfRemove(int num) {
         fill(num);
         long time = System.currentTimeMillis();
@@ -52,6 +71,10 @@ public class ListTester {
         return System.currentTimeMillis() - time;
     }
 
+    /**
+     * fills the list with the specified number of items
+     * @param count number of elements
+     */
     public void fill(int count) {
         for (int i = 0; i < count; i++) {
             list.add(i);
